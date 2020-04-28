@@ -2,7 +2,13 @@
 # PROMPT
 #
 PROMPT_BRACKET_BEGIN='%{$fg_bold[white]%}['
+
 PROMPT_HOST='%{$fg_bold[cyan]%}%m'
+# At work, IT requires me to use an aweful machine name so...
+if [[ "$(hostname)" =~ "tsa*" ]]; then
+   PROMPT_HOST='%{$fg_bold[cyan]%}deepwinter'
+fi
+
 PROMPT_SEPARATOR='%{$reset_color%}:'
 PROMPT_DIR='%{$fg_bold[yellow]%}%c'
 PROMPT_BRACKET_END='%{$fg_bold[white]%}]'
